@@ -13,5 +13,14 @@ def calculate_ratios(lm):
     return pd.DataFrame([ratios])
 
 
-df = calculate_ratios(2000)
-print(df)
+def main():
+    df = calculate_ratios(200000)
+    print(df)
+
+
+def trade():
+    metal = 50
+    deut = 15
+
+    cri = (1.8 / 2.4) * metal + deut * 1.8
+    print(cri)

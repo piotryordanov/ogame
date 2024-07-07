@@ -1,15 +1,33 @@
-[tool.poetry]
+[project]
 name = "ogame"
 version = "0.1.0"
-description = ""
-authors = ["Alpha <piotr@piotryordanov.com>"]
+description = "Add your description here"
+authors = [
+    { name = "Full Name", email = "email@address.invalid" }
+]
+dependencies = [
+    "pandas>=2.2.2",
+]
 readme = "README.md"
-
-[tool.poetry.dependencies]
-python = "^3.11"
-pandas = "^2.0.3"
-
+requires-python = ">= 3.8"
+license = { text = "MIT" }
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ogame"]
+
+
+[project.scripts]
+# "dev" = "multicoin:dev"
+"main" = "ogame:main"
+"trade" = "ogame:trade"
